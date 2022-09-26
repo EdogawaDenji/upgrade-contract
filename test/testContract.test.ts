@@ -1,14 +1,13 @@
 import { expect } from 'chai';
-import { BigNumber, Contract } from 'ethers';
 import { ethers, upgrades } from 'hardhat';
+import { Contract, BigNumber } from 'ethers';
 
-describe('TestContract (proxy)', function () {
+describe('Box (proxy)', function () {
   let testContract: Contract;
 
   beforeEach(async function () {
-    const TestContract = await ethers.getContractFactory('TestContract');
-
-    testContract = await upgrades.deployProxy(TestContract, [10], {
+    const Box = await ethers.getContractFactory('TestContract');
+    testContract = await upgrades.deployProxy(Box, [10], {
       initializer: 'store'
     });
   });
@@ -17,9 +16,8 @@ describe('TestContract (proxy)', function () {
     expect(await testContract.getValue()).to.equal(BigNumber.from('10'));
 
     await testContract.store(100);
-
-    const result2 = await testContract.getValue();
-    console.log(result2);
-    // expect(await testContract.getValue()).to.equal(BigNumber.from('100'));
+    const result = await testContract.getValue();
+    console.log('result', result);
+    expect(await testContract.getValue()).to.equal(BigNumber.from('100'));
   });
 });
