@@ -2,12 +2,12 @@ import { expect } from 'chai';
 import { ethers, upgrades } from 'hardhat';
 import { Contract, BigNumber } from 'ethers';
 
-describe('Box (proxy)', function () {
+describe('TestContract (proxy)', function () {
   let testContract: Contract;
 
   beforeEach(async function () {
-    const Box = await ethers.getContractFactory('TestContract');
-    testContract = await upgrades.deployProxy(Box, [10], {
+    const TestContract = await ethers.getContractFactory('TestContract');
+    testContract = await upgrades.deployProxy(TestContract, [10], {
       initializer: 'store'
     });
   });
