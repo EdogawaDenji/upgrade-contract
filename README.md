@@ -1,14 +1,38 @@
 # Sample Hardhat Project
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
 Try running some of the following tasks:
+
+**hardhat help**
 
 ```shell
 npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
 ```
 
+**compile contract**
+
+```shell
+npx hardhat compile --force
+```
+
+**run stand-alone hardhat testnet**
+
+```shell
+npx hardhat node
+```
+
+**run the deploy script**
+
+```shell
+npx hardhat run scripts/deployXX.ts --network localhost
+```
+
+**run test**
+
+```shell
+npx hardhat test test/testXX.test.ts
+```
+
+References:
+<https://hardhat.org/hardhat-runner/docs/getting-started>
+<https://docs.openzeppelin.com/learn/upgrading-smart-contracts#upgrading>
+<https://docs.openzeppelin.com/defender/guide-upgrades>
