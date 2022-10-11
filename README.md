@@ -1,6 +1,8 @@
-# Sample Hardhat Project
+## Description
 
-Try running some of the following tasks:
+use hardhat upgrade contract example
+
+## Try running some of the following tasks
 
 **hardhat help**
 
@@ -32,10 +34,7 @@ npx hardhat run scripts/deployXX.ts --network localhost
 npx hardhat test test/testXX.test.ts
 ```
 
-References:
-
+**References**：
 <https://hardhat.org/hardhat-runner/docs/getting-started/>
-
 <https://docs.openzeppelin.com/learn/upgrading-smart-contracts#upgrading/>
-
 <https://docs.openzeppelin.com/defender/guide-upgrades/>
